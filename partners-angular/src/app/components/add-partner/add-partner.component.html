@@ -1,0 +1,12 @@
+<form (ngSubmit)="addPartner()">
+    <mat-form-field>
+      <mat-label>Nome do Parceiro</mat-label>
+      <input matInput [(ngModel)]="partner.name" name="name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Serviço</mat-label>
+      <input matInput [(ngModel)]="partner.service" name="service" required>
+    </mat-form-field>
+    <button mat-raised-button type="submit">Cadastrar</button>
+  </form>
+  
