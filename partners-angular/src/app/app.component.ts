@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  [x: string]: any;
   title = 'partners-angular';
+
+  constructor(private router: Router) {}
 
   logout() {
     localStorage.removeItem('username');
     document.cookie = 'username=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-    this['router'].navigate(['/login']);
+    this.router.navigate(['/login']);
   }
 }

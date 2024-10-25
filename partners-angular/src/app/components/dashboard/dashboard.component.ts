@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PartnerService } from '../../services/partner.service';
 
 @Component({
@@ -7,10 +8,8 @@ import { PartnerService } from '../../services/partner.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  [x: string]: any;
   partners: any[] = [];
-
-  constructor(private partnerService: PartnerService) {}
+  constructor(private partnerService: PartnerService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadPartners();
@@ -32,6 +31,6 @@ export class DashboardComponent implements OnInit {
   logout() {
     localStorage.removeItem('username');
     document.cookie = 'username=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-    this['router'].navigate(['/login']);
+    this.router.navigate(['/login']);
   }
 }
