@@ -12,12 +12,17 @@ export class DashboardComponent implements OnInit {
   constructor(private partnerService: PartnerService) {}
 
   ngOnInit(): void {
-    this.partnerService.getPartners().subscribe(data => {
-      this.partners = data;
+    this.loadPartners();
+  }
+
+  loadPartners(): void {
+    this.partnerService.getPartners().subscribe({
+      next: (data) => this.partners = data,
+      error: (err) => console.error('Erro ao carregar parceiros:', err)
     });
   }
 
-  deletePartner(id: string) {
+  deletePartner(id: string): void {
     this.partnerService.deletePartner(id).subscribe(() => {
       this.partners = this.partners.filter(p => p.id !== id);
     });
