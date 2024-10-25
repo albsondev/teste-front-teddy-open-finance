@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'add-partner', component: AddPartnerComponent },
   { path: 'add-partner', component: AddPartnerComponent }
 ];
 

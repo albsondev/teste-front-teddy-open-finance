@@ -7,6 +7,7 @@ import { PartnerService } from '../../services/partner.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  [x: string]: any;
   partners: any[] = [];
 
   constructor(private partnerService: PartnerService) {}
@@ -26,5 +27,11 @@ export class DashboardComponent implements OnInit {
     this.partnerService.deletePartner(id).subscribe(() => {
       this.partners = this.partners.filter(p => p.id !== id);
     });
+  }
+
+  logout() {
+    localStorage.removeItem('username');
+    document.cookie = 'username=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    this['router'].navigate(['/login']);
   }
 }
