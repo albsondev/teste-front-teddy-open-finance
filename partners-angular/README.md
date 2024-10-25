@@ -1,27 +1,75 @@
-# PartnersAngular
+# Projeto Angular: Gestão de Parceiros
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.
+Este projeto é uma aplicação Angular desenvolvida para gerenciar parceiros, permitindo cadastro, listagem, edição e exclusão de parceiros.
 
-## Development server
+## Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 15
+- Angular Material
+- TypeScript
+- Nginx (para servir a aplicação em produção)
+- Docker
 
-## Code scaffolding
+## Pré-requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js e npm instalados
+- Docker Desktop instalado e rodando
 
-## Build
+## Como Rodar o Projeto Localmente
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone o Repositório**: Clone o repositório para sua máquina local.
 
-## Running unit tests
+   ```
+   git clone https://github.com/albsondev/teste-front-teddy-open-finance.git
+   cd seu-repositorio/partners-angular
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Instale as Dependências:**: Execute o comando abaixo para instalar as dependências do projeto.
+    ```
+    npm install
+    ```
 
-## Running end-to-end tests
+3. **Rode o Projeto:**: Para rodar o projeto em modo de desenvolvimento, execute:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ```
+    ng serve
+    ```
 
-## Further help
+    #### A aplicação estará disponível em **http://localhost:4200**.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Como Rodar o Projeto com Docker
+### 1) Construir o Contêiner Docker
+Certifique-se de estar no diretório do projeto Angular e execute o comando abaixo para construir o contêiner Docker:
+
+```
+    docker build -t partners-angular .
+```
+
+### 2) Executar o Contêiner Docker
+Execute o contêiner com o seguinte comando:
+
+```
+docker run -p 4200:80 partners-angular
+```
+#### A aplicação estará disponível em http://localhost:4200
+
+### Estrutura de Diretórios
+
+- ```src/app```: Contém os componentes, serviços, e módulos Angular.
+
+- ```src/assets```: Contém ativos estáticos como imagens e estilos globais.
+
+- ```src/environments```: Configurações de ambiente para desenvolvimento e produção.
+
+### Funcionalidades
+
+- **Login:** Tela de login com opção de manter conectado.
+
+- **Dashboard:** Listagem de parceiros com opções de editar e deletar.
+
+- **Cadastro de Parceiro:** Formulário para adicionar novos parceiros.
+
+- **Sobre:** Página informativa sobre o projeto.
+
+## Contato
+Para mais informações, entre em contato comigo através do e-mail [albsondev@outlook.com](mailto:albsondev@outlook.com).
