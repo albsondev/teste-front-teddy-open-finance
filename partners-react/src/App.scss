@@ -35,6 +35,9 @@
 
 .card {
   padding: 2em;
+  & button {
+    background-color: orangered !important;
+  }
 }
 
 .read-the-docs {
