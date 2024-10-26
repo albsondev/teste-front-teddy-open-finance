@@ -1,0 +1,61 @@
+$primary-color: #4285f4;
+$background-color: #fff;
+$text-color: #333;
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: $background-color;
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+
+    .mat-form-field-label {
+        color: $text-color;
+    }
+
+     input.mat-input-element {
+        border: none; /* Removendo a borda padrão do input */
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+     }
+
+    .mat-form-field-appearance-outline {
+      .mat-form-field-outline,
+      .mat-form-field-outline-thick {
+        color: $primary-color; 
+      }
+    }
+
+    &.mat-focused .mat-form-field-label {
+        color: $primary-color;
+    }
+
+  }
+
+  button[type="submit"] {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+

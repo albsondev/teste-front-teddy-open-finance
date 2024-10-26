@@ -1,10 +1,9 @@
-$primary-color: #4285f4; // Azul Google
+$primary-color: #4285f4;
 $background-color: #ffffff;
 $border-color: #ddd;
 $placeholder-color: #999;
 $text-color: #757575;
 
-// Mixins
 @mixin button-style {
   padding: 12px 24px;
   border: none;
@@ -15,7 +14,6 @@ $text-color: #757575;
   text-transform: uppercase;
 }
 
-// Estilos gerais para o formulário
 form {
   display: flex;
   flex-direction: column;
@@ -28,7 +26,6 @@ form {
   background-color: $background-color;
 }
 
-// Estilos para os campos de entrada (mat-form-field)
 mat-form-field {
   width: 100%;
   margin-bottom: 16px;
@@ -52,7 +49,6 @@ mat-form-field {
     padding: 8px;
   }
 
-  // Placeholder style
   ::placeholder {
     color: $placeholder-color;
     opacity: 1;
@@ -68,14 +64,18 @@ mat-form-field {
 
 }
 
-// Estilos para o checkbox
 mat-checkbox {
   margin-bottom: 20px;
   display: block;
-  color: $text-color;
 }
 
-// Estilos para o botão de enviar
+mat-checkbox {
+    background-color: orange;
+    border-radius: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 button[type="submit"] {
   @include button-style;
   background-color: $primary-color;
@@ -87,7 +87,6 @@ button[type="submit"] {
   }
 }
 
-// Responsividade para telas menores
 @media (max-width: 400px) {
   form {
     width: 90%;

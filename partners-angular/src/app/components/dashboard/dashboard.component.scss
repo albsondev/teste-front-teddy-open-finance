@@ -7,29 +7,29 @@ $error-color: #f44336;
 table {
   width: 100%;
   background-color: $background-color;
-  border-collapse: collapse; // Colapsa as bordas da tabela
+  border-collapse: collapse;
   margin-top: 1em;
 
   th, td {
     padding: 12px 16px;
     text-align: left;
-    border-bottom: 1px solid #eee; // Linha sutil entre as linhas
+    border-bottom: 1px solid #eee;
     color: $text-color;
   }
 
   th {
-    font-weight: 500; // Cabeçalho um pouco mais espesso
-    color: #555; // Cor de texto mais escura para o cabeçalho
-    background-color: #f5f5f5; // Cor de fundo suave para o cabeçalho
+    font-weight: 500;
+    color: #555;
+    background-color: #f5f5f5;
   }
 
-  // Estilo para linhas pares (efeito zebrado - opcional)
+  //efeito zebrado na tabela
   tr:nth-child(even) {
     background-color: #f9f9f9;
   }
 
 
-  button { // Estilos para o botão deletar
+  button {
     background-color: $error-color;
     color: white;
     border: none;
@@ -47,9 +47,9 @@ table {
 // Estilo para a mensagem "Nenhum parceiro encontrado"
 ng-template {
     p {
-        text-align: center; // Centraliza o texto
-        color: #999; // Cor mais clara para o texto informativo
-        margin-top: 20px; // Adiciona um espaçamento superior
+        text-align: center;
+        color: #999;
+        margin-top: 20px;
     }
 }
 
