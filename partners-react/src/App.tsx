@@ -8,34 +8,40 @@ const App: React.FC = () => {
     <Router>
       <div className="app">
         <header>
-
           <nav>
             <ul>
               <li>
-                <NavLink to="/" end>Home</NavLink>
+                <NavLink to="/" end className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
               </li>
               <li>
                 <a
                   href="http://localhost:4200/dashboard"
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className={window.location.href === 'http://localhost:4200/dashboard' ? 'active' : ''} 
+                  className="external-link"
                 >
                   Dashboard
                 </a>
               </li>
               <li>
-                <NavLink to="http://localhost:4200/add-partner" target="_blank" rel="noopener noreferrer">Cadastrar Parceiro</NavLink>
+                <a
+                  href="http://localhost:4200/add-partner"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="external-link"
+                >
+                  Cadastrar Parceiro
+                </a>
               </li>
               <li>
-                <NavLink to="/external-companies">Empresas Externas</NavLink>
+                <NavLink to="/external-companies" className={({ isActive }) => (isActive ? 'active' : '')}>Empresas Externas</NavLink>
               </li>
               <li>
                 <a
                   href="http://localhost:4200/about"
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className={window.location.href === 'http://localhost:4200/dashboard' ? 'active' : ''} 
+                  className="external-link"
                 >
                   Sobre
                 </a>

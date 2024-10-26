@@ -15,7 +15,7 @@ const ExternalCompanyForm: React.FC<ExternalCompanyFormProps> = ({ onAddCompany 
     e.preventDefault();
     try {
       const newCompany = await addExternalCompany({ name, address });
-      onAddCompany(newCompany);  // Certifique-se de que newCompany tem o `id`
+      onAddCompany(newCompany);
       setName('');
       setAddress('');
     } catch (error) {

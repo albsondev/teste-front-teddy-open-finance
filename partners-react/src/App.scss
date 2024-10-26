@@ -54,3 +54,11 @@ app-root nav a.active { /* Seletor mais específico, usando o seletor do compone
   background-color: rgba(var(--primary-color), 0.2) !important;
   color: var(--primary-color) !important;
 }
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+}

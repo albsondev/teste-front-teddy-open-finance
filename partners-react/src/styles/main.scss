@@ -82,6 +82,28 @@ nav a.active { /* Sem :host se o nav estiver diretamente no template */
     }
   }
 
+  .app .external-companies-page {
+    display: flex;
+    width: 100% !important;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .external-link {
+    color: #007bff;
+    text-decoration: none;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .active {
+    font-weight: bold;
+    color: #0056b3;
+  }
+  
+
 @media (max-width: $breakpoint-mobile) {
     header {
       nav {

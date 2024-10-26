@@ -1,10 +1,31 @@
-import React from 'react';
-import { ExternalCompaniesListProps } from '../../types';
+import { ExternalCompany } from '../../types';
+import { usePagination } from '../../hooks/usePagination';
 import './ExternalCompaniesList.scss';
 
+type ExternalCompaniesListProps = {
+  companies: ExternalCompany[];
+  onDeleteCompany: (id: string) => Promise<void>;
+};
+
 const ExternalCompaniesList: React.FC<ExternalCompaniesListProps> = ({ companies, onDeleteCompany }) => {
+  const itemsPerPage = 10;
+
+  const {
+    currentPage,
+    indexOfFirstItem,
+    indexOfLastItem,
+    paginate,
+    pageNumbers,
+  } = usePagination({
+    itemsPerPage,
+    totalItems: companies.length,
+  });
+
+  const currentCompanies = companies.slice(indexOfFirstItem, indexOfLastItem);
+
   return (
     <div className="external-companies-list">
+        <h2>Empresas Externas</h2>
       <table>
         <thead>
           <tr>
@@ -14,7 +35,7 @@ const ExternalCompaniesList: React.FC<ExternalCompaniesListProps> = ({ companies
           </tr>
         </thead>
         <tbody>
-          {companies.map((company) => (
+          {currentCompanies.map((company) => (
             <tr key={company.id}>
               <td>{company.name}</td>
               <td>{company.address}</td>
@@ -25,6 +46,17 @@ const ExternalCompaniesList: React.FC<ExternalCompaniesListProps> = ({ companies
           ))}
         </tbody>
       </table>
+      <div>
+        {pageNumbers.map(page => (
+          <button
+            key={page}
+            onClick={() => paginate(page)}
+            className={page === currentPage ? 'active' : ''}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

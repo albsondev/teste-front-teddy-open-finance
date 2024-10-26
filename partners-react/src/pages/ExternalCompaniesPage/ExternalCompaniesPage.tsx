@@ -35,7 +35,6 @@ const ExternalCompaniesPage: React.FC = () => {
 
   return (
     <div className="external-companies-page">
-      <h2>Empresas Externas</h2>
       <ExternalCompanyForm onAddCompany={handleAddCompany} />
       <ExternalCompaniesList companies={companies} onDeleteCompany={handleDeleteCompany} />
     </div>
