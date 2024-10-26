@@ -1,7 +1,12 @@
 <nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/add-partner">Cadastrar Parceiro</a>
-  <a routerLink="/about">Sobre</a>
+  <ul>
+    <li><a routerLink="/login" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+    <li><a routerLink="/add-partner" routerLinkActive="active">Cadastrar Parceiro</a></li>
+    <li><a href="http://localhost:5173/external-companies" target="_blank" rel="noopener noreferrer">Empresas Externas</a></li>
+    <li><a routerLink="/about" routerLinkActive="active">Sobre</a></li>
+  </ul>
   <button (click)="logout()">Sair</button>
 </nav>
+
 <router-outlet></router-outlet>

@@ -51,7 +51,43 @@ mat-form-field {
 
   ::placeholder {
     color: $placeholder-color;
-    opacity: 1;
+    nav ul li a:active {
+      background-color: rgba(66, 133, 244, 0.2);
+      color: #4285f4;
+    }
+
+    nav ul li a:active {
+      background-color: rgba(66, 133, 244, 0.2);
+      color: #4285f4;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+
+      nav ul li a:active {
+        background-color: rgba(66, 133, 244, 0.2);
+        color: #4285f4;
+      }
+      &.header nav ul li a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+    }
   }
 
   :-ms-input-placeholder {
@@ -61,7 +97,6 @@ mat-form-field {
   ::-ms-input-placeholder {
     color: $placeholder-color;
   }
-
 }
 
 mat-checkbox {
@@ -70,10 +105,10 @@ mat-checkbox {
 }
 
 mat-checkbox {
-    background-color: orange;
-    border-radius: 5px;
-    padding-left: 1em;
-    padding-right: 1em;
+  background-color: orange;
+  border-radius: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 button[type="submit"] {

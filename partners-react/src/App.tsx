@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import ExternalCompaniesPage from './pages/ExternalCompaniesPage/ExternalCompaniesPage';
 import './styles/main.scss';
 
@@ -8,22 +8,38 @@ const App: React.FC = () => {
     <Router>
       <div className="app">
         <header>
-          <h1>Gestão de Empresas Externas</h1>
+
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <NavLink to="/" end>Home</NavLink>
               </li>
               <li>
-                <Link to="/external-companies">Empresas Externas</Link>
+                <a
+                  href="http://localhost:4200/dashboard"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={window.location.href === 'http://localhost:4200/dashboard' ? 'active' : ''} 
+                >
+                  Dashboard
+                </a>
               </li>
               <li>
-                <a href="http://localhost:4200/dashboard" target="_blank" rel="noopener noreferrer">Dashboard Angular</a>
+                <NavLink to="http://localhost:4200/add-partner" target="_blank" rel="noopener noreferrer">Cadastrar Parceiro</NavLink>
               </li>
               <li>
-                <a href="http://localhost:4200/add-partner" target="_blank" rel="noopener noreferrer">Cadastrar Parceiro (Angular)</a>
+                <NavLink to="/external-companies">Empresas Externas</NavLink>
               </li>
-              {/* Adicione outros links externos para o Angular conforme necessário */}
+              <li>
+                <a
+                  href="http://localhost:4200/about"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={window.location.href === 'http://localhost:4200/dashboard' ? 'active' : ''} 
+                >
+                  Sobre
+                </a>
+              </li>
             </ul>
           </nav>
         </header>
@@ -34,7 +50,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <footer>
-          <p>© 2023 Sua Empresa</p>
+          <p>© 2024 Footer</p>
         </footer>
       </div>
     </Router>

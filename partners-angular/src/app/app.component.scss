@@ -1,5 +1,105 @@
-:host {
-    display: block;
-    height: 100%;
-    background-color: #f0f0f0 !important;
+:root {
+    --primary-color: #4285f4;
+    --background-color: #fff;
+    --text-color: #333;
+    --heading-color: #222;
+    --breakpoint-mobile: 768px;
+  }
+  
+  body { /* Estilos do body */
+      font-family: sans-serif;
+      background-color: #f0f0f0; /* Mantém a cor de fundo do body */
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  
+  
+  ::ng-deep nav {
+    background-color: var(--background-color);
+    padding: 16px 24px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  ::ng-deep nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+  }
+  
+  ::ng-deep nav li {
+    margin-right: 20px;
+  }
+  
+  ::ng-deep nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  ::ng-deep nav a:hover {
+    background-color: rgba(var(--primary-color), 0.1);
+  }
+  
+  ::ng-deep nav a.active {  /* Classe 'active' do Angular */
+    background-color: rgba(var(--primary-color), 0.2);
+    color: var(--primary-color);
+  }
+  
+  ::ng-deep nav button { /* Estilos do botão */
+    background-color: var(--error-color); /* Use a variável de cor de erro se tiver */
+    color: #fff;
+    border: none;
+    margin-left: auto;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  ::ng-deep nav button:hover {
+    background-color: #d32f2f;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  ::ng-deep nav a.active { 
+    background-color: rgba(var(--primary-color), 0.2) !important;
+    color: var(--primary-color) !important;
+  }
+  
+  /* Media query - responsividade */
+  @media (max-width: var(--breakpoint-mobile)) {
+    ::ng-deep nav ul {
+      flex-direction: column;
+    }
+    ::ng-deep nav li {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    ::ng-deep nav a,
+    ::ng-deep nav button {
+      display: block; /* Ocupar toda a largura */
+      text-align: center;
+      width: 100%;
+      margin-left: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  html, body {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
+  
+  
