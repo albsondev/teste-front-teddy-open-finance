@@ -1,0 +1,15 @@
+:host {
+    display: block; // ou flex, grid, dependendo do seu layout
+    height: 100%;
+    background-color: #f0f0f0 !important; // ou a cor/imagem que você desejar
+  }
+  
+  // OU, para afetar todo o body:
+  :host {
+    display: block;
+    height: 100%;
+    body { // aplique o estilo diretamente ao body
+      background-color: red !important; // sua cor aqui
+    }
+  }
+  

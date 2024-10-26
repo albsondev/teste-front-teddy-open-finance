@@ -1,0 +1,16 @@
+$text-color: #333;
+$heading-color: #222;
+
+div {
+    margin-top: 1em;
+    margin-left: 1em;
+  h2 {
+    color: $heading-color;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $text-color;
+    line-height: 1.6;
+  }
+}
