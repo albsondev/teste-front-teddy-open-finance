@@ -42,5 +42,14 @@
         }
       }
     }
+
+    button.active {
+        background-color: lightblue;
+        margin-top: 1.5em;
+        float: inline-end;
+        padding: 4px 6px;
+        width: 45px;
+        border-radius: 4px;
+    }
   }
   
