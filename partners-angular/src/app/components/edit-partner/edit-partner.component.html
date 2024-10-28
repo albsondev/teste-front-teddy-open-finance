@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Editar Nome do Parceiro</mat-label> 
+      <input matInput [(ngModel)]="partner.name" name="name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Editar Serviço</mat-label> 
+      <input matInput [(ngModel)]="partner.service" name="service" required>
+    </mat-form-field>
+    <button mat-raised-button type="submit">Editar Serviço</button> 
+</form>

@@ -1,21 +1,22 @@
+// src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material.module';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddPartnerComponent } from './components/add-partner/add-partner.component';
 import { AboutComponent } from './components/about/about.component';
+import { EditPartnerComponent } from './components/edit-partner/edit-partner.component';
+import { PartnerService } from './services/partner.service'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AboutComponent } from './components/about/about.component';
     LoginComponent,
     DashboardComponent,
     AddPartnerComponent,
-    AboutComponent
+    AboutComponent,
+    EditPartnerComponent
   ],
   imports: [
     BrowserModule,
@@ -31,14 +33,11 @@ import { AboutComponent } from './components/about/about.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [PartnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
