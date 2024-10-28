@@ -9,6 +9,9 @@ import { PartnerService } from '../../services/partner.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  clearCookies(clearCookies: any) {
+    throw new Error('Method not implemented.');
+  }
   partners: any[] = [];
 
   constructor(
