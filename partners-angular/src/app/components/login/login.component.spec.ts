@@ -3,6 +3,7 @@ import { LoginComponent } from './login.component';
 import { Router } from '@angular/router';
 import { MaterialModule } from '../../material.module';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -11,9 +12,10 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+    routerSpy.navigate.and.returnValue(Promise.resolve(true));
 
     await TestBed.configureTestingModule({
-      imports: [MaterialModule, FormsModule],
+      imports: [MaterialModule, FormsModule, BrowserAnimationsModule],
       declarations: [LoginComponent],
       providers: [{ provide: Router, useValue: routerSpy }]
     }).compileComponents();

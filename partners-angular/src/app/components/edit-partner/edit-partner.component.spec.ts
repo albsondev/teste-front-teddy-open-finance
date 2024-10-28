@@ -78,9 +78,9 @@ describe('EditPartnerComponent', () => {
   });
 
   it('should show error message if no partner ID found on submit', () => {
-    const activatedRouteStub = TestBed.inject(ActivatedRoute);
-    spyOn(activatedRouteStub.snapshot.paramMap, 'get').and.returnValue(null);
-
+    const activatedRouteStub: ActivatedRoute = TestBed.inject(ActivatedRoute);
+    (activatedRouteStub.snapshot.paramMap.get as jasmine.Spy).and.returnValue(null);
+  
     component.onSubmit();
 
     expect(snackBarSpy.open).toHaveBeenCalledWith('Erro: ID do parceiro não encontrado.', 'Fechar', { duration: 3000 });

@@ -3,6 +3,12 @@ import { By } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from '@angular/router/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { LoginComponent } from "./components/login/login.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { AboutComponent } from "./components/about/about.component";
+import { AddPartnerComponent } from "./components/add-partner/add-partner.component";
+import { EditPartnerComponent } from "./components/edit-partner/edit-partner.component";
 
 
 describe('AppComponent', () => {
@@ -13,11 +19,21 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AppComponent ],
-      imports: [ RouterTestingModule ],
+      imports: [ 
+        RouterTestingModule.withRoutes([
+          { path: '', component: AppComponent },
+          { path: 'dashboard', component: DashboardComponent },
+          { path: 'login', component: LoginComponent },
+          { path: 'about', component: AboutComponent },
+          { path: 'add-partner', component: AddPartnerComponent },
+          { path: 'edit-partner/:id', component: EditPartnerComponent }
+      ])
+    ],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [
         {
           provide: Router,
-          useValue: { navigate: jasmine.createSpy('navigate') } // Mock do Router
+          useValue: { navigate: jasmine.createSpy('navigate') }
         }
       ]
     }).compileComponents();
@@ -33,7 +49,7 @@ describe('AppComponent', () => {
   });
 
   it('should call logout and navigate to login', () => {
-    spyOn(localStorage, 'removeItem'); // Spy na função removeItem do localStorage
+    spyOn(localStorage, 'removeItem');
     
     // Mock de document.cookie
     Object.defineProperty(document, 'cookie', {

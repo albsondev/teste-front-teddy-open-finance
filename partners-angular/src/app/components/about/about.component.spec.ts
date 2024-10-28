@@ -37,7 +37,7 @@ describe('AboutComponent', () => {
   });
 
   it('should display technologies used', () => {
-    const techSection = fixture.debugElement.query(By.css('h3')).nativeElement;
-    expect(techSection.textContent).toContain('Tecnologias Utilizadas');
+    const techSection = fixture.debugElement.query(By.css('h3'));
+    expect(techSection.nativeElement.textContent).toContain('Tecnologias Utilizadas');
   });
 });
