@@ -12,7 +12,7 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     routerSpy = jasmine.createSpyObj('Router', ['navigate']);
-    routerSpy.navigate.and.returnValue(Promise.resolve(true));
+    routerSpy.navigate.and.resolveTo(true); // Simplificado
 
     await TestBed.configureTestingModule({
       imports: [MaterialModule, FormsModule, BrowserAnimationsModule],
@@ -34,11 +34,10 @@ describe('LoginComponent', () => {
 
     component.username = 'testUser';
     component.stayConnected = true;
-
     component.login();
 
     expect(document.cookie).toContain('username=testUser');
-    expect(localStorage.getItem('username')).toBeNull(); // Deve estar vazio
+    expect(localStorage.getItem('username')).toBeNull();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 
@@ -47,11 +46,10 @@ describe('LoginComponent', () => {
 
     component.username = 'testUser';
     component.stayConnected = false;
-
     component.login();
 
     expect(localStorage.setItem).toHaveBeenCalledWith('username', 'testUser');
-    expect(document.cookie).toBe(''); // Não deve ter cookie
+    expect(document.cookie).toBe('');
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 

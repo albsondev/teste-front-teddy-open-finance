@@ -7,23 +7,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  username: string = '';
-  password: string = '';
-  stayConnected: boolean = false;
+  username!: string;
+  password!: string;
+  stayConnected!: boolean;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  login() {
+  login(): void {
     if (this.stayConnected) {
       document.cookie = `username=${this.username}; path=/`;
     } else {
       localStorage.setItem('username', this.username);
     }
-    // Corrigido para usar navegação do Angular
-    this.router.navigate(['/dashboard']).then(success => {
-      if (!success) {
-        console.error('Navigation has failed!');
-      }
+
+    this.router.navigate(['/dashboard']).then(() => {
+    }).catch(error => {
+      console.error("Erro de navegação:", error);
     });
   }
 }
