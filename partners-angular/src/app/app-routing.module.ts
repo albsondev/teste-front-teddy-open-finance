@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'add-partner', component: AddPartnerComponent },
-  { path: 'add-partner', component: AddPartnerComponent },
   { path: 'about',  component: AboutComponent }
 ];
 

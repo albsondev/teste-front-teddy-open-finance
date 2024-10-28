@@ -1,5 +1,45 @@
 <div>
     <h2>Sobre a Aplicação</h2>
-    <p>Esta aplicação foi desenvolvida para gerenciar parceiros e empresas externas...</p>
+    <hr />
+    
+    <h1>Descrição da Aplicação - Sistema de Cadastro e Gerenciamento de Parceiros</h1>
+
+    <h3>Objetivo e Usabilidade do Sistema</h3>
+    <p>
+      A principal motivação deste projeto é criar uma plataforma de gestão eficiente para parceiros e empresas externas. Com esse sistema, os usuários podem:
+  </p>
+  <ul>
+    <li>Cadastrar novos parceiros, incluindo informações detalhadas de suas integrações e clientes atendidos.</li>
+    <li>Listar todos os parceiros em uma tabela com paginação, possibilitando a navegação entre diferentes páginas com facilidade e eficiência.</li>
+    <li>Editar e deletar parceiros diretamente na interface, facilitando a manutenção de dados sempre atualizados.</li>
+    <li>Compartilhar os dados da tabela com o estado de paginação preservado, proporcionando uma experiência de navegação contínua e consistente.</li>
+  </ul>
+
+  <h3>Recursos do Sistema</h3>
+  <h4>Página de Login</h4>
+  <p>
+    Os usuários acessam a aplicação por meio de uma página de login, onde podem inserir nome e senha. Embora a autenticação não esteja implementada, a funcionalidade de “manter conectado” permite que o nome do usuário seja salvo em um cookie ou no local storage, dependendo da seleção do checkbox. Assim, a experiência é personalizada e, ao retornar à aplicação, o usuário verá seu nome salvo automaticamente.
+  </p>
+
+  <h4>Cadastro e Listagem de Parceiros e Empresas Externas</h4>
+  <p>
+      A aplicação oferece páginas específicas para o cadastro e a listagem de parceiros e empresas externas. Na página de listagem, o sistema exibe os dados em uma tabela paginada, e a última coluna de cada linha contém ações para editar e deletar registros.
+  </p>
+
+  <h4>Persistência de Dados e Integração com API</h4>
+  <p>
+      Todas as ações de CRUD (criação, leitura, atualização e exclusão) são integradas a uma API, que armazena e persiste as informações dos parceiros e empresas externas.
+  </p>
+
+  <h3>Tecnologias Utilizadas</h3>
+  <p>
+    Este sistema foi desenvolvido utilizando <strong>React.js</strong> e <strong>Next.js</strong>, com TypeScript, aproveitando-se das funcionalidades robustas desses frameworks para criar uma experiência de usuário fluida e de alta performance. O <strong>Tailwind CSS</strong> foi empregado para o estilo da interface, garantindo um layout limpo e responsivo. A escolha por <strong>Vite</strong> como ferramenta de build traz maior eficiência e velocidade durante o desenvolvimento, e o <strong>Cypress</strong> foi utilizado para testes, assegurando que as funcionalidades principais estejam livres de bugs. Para o backend, uma API REST foi integrada para suportar as operações de CRUD de forma consistente.
+  </p>
+
+  <h3>Considerações sobre o Projeto</h3>
+  <p>
+    Este projeto foi criado com o objetivo de facilitar o gerenciamento de dados internos e externos relacionados aos nossos parceiros. A experiência de desenvolvimento foi desafiadora e enriquecedora, especialmente ao trabalhar na integração entre frontend e backend para persistência dos dados, e na criação de uma experiência de navegação que considera a continuidade do usuário, como no recurso de “manter conectado” e no compartilhamento de links com o estado de paginação preservado.
+</p>
+
   </div>
   

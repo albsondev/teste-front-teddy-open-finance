@@ -6,6 +6,11 @@
     background-color: #d9e7fd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
+    form {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
     input {
         width: 35rem !important;
     }
@@ -42,4 +47,15 @@
       }
     }
   }
-  
+
+  @media only screen and (max-width: 600px) {
+    form {
+      display: flex !important;
+      flex-direction: column !important;
+      overflow-x: hidden !important;
+      justify-content: center;
+      width: 100vw !important;
+      padding: 1em 5em 2.5em 2.5em !important;
+      margin-right: 5em !important;
+    }
+  }
