@@ -50,9 +50,9 @@ docker build -t partners-react .
 Execute o contêiner com o seguinte comando:
 
 ```
-docker run -p 3000:80 partners-react
+docker run -p 5173:80 partners-react
 ```
-#### A aplicação estará disponível em http://localhost:3000/
+#### A aplicação estará disponível em http://localhost:5173/
 
 
 ## Estrutura de Diretórios
