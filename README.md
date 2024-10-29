@@ -67,4 +67,4 @@ Ambas as APIs possuem os seguintes endpoints:
 
 ## Vídeo
 
-[URL do vídeo no YouTube]
+[\[Veja Vídeo explicativo do Projeto\]](https://youtu.be/uNsAYt8ny0Q)
